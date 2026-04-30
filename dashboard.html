@@ -13,7 +13,7 @@
     <h2>Student Identification</h2>
 
     <!-- Default badge (pwofesè ap wè li) -->
-    <img src="card residence.jpg" id="preview" class="card Residence">
+    <img src="Badge.jpg" id="preview" class="card Residence">
 
     <br><br>
 
@@ -26,6 +26,20 @@
  >
 
 </div>
+<script>
+document.getElementById("upload").addEventListener("change", function(event){
+    let file = event.target.files[0];
 
+    if(file){
+        let reader = new FileReader();
+
+        reader.onload = function(e){
+            document.getElementById("preview").src = e.target.result;
+        }
+
+        reader.readAsDataURL(file);
+    }
+});
+</script>
 </body>
 </html>
